@@ -1,0 +1,12 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/tex2pdf*": true
+  },
+  "markdown.extension.italic.indicator": "_",
+  "markdown.extension.toc.unorderedList.marker": "*"
+}

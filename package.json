@@ -1,0 +1,22 @@
+{
+  "name": "dhbw-bachelorthesis-pandoc",
+  "version": "1.0.0",
+  "description": "Provides node scripts to automaticly build markdown to pdf. Currently uses the bachelorthesis by DHBW Heidenheim as main template",
+  "main": "generateCommand.js",
+  "scripts": {
+    "watch": "node ./watchBuild.js",
+    "add": "node ./insertChapter.js",
+    "clean": "node ./clean.js",
+    "generate": "node ./generateCommand.js",
+    "build": "buildPDF.bat",
+    "prebuild": "npm run generate",
+    "prewatch": "npm run generate",
+    "start": "npm run build"
+  },
+  "author": "Simon Steinrücken",
+  "license": "ISC",
+  "dependencies": {
+    "node-notifier": "^5.2.1",
+    "node-watch": "^0.5.8"
+  }
+}

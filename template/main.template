@@ -1,0 +1,111 @@
+%!TEX root = ./main.tex
+
+%%**************************************************************
+%%
+%% DHBW Heidenheim - Template for Bachelor Thesis
+%%
+%% Bevor using this template please have a look at the README.md file
+%%
+%%**************************************************************
+
+\input{template/header}
+
+$if(graphics)$
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+$endif$
+
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+
+\input{template/content/glossary}
+
+\begin{document}
+
+	% Cover
+	\begin{spacing}{1}
+		\input{template/ads/cover}
+	\end{spacing}
+	\newpage
+
+	\pagenumbering{Roman}
+
+	% Restriction notices
+	\ifDocType{T2\_3100}{%
+		% no restricition notices for semester paper
+	}{%
+		\input{template/ads/restrictionNotices}
+		\newpage
+	}%
+
+	% Declaration
+	\input{template/ads/declaration}
+	\newpage
+
+	% Abstract
+	\input{template/content/abstract}
+	\newpage
+
+        % only page number in footer
+	\pagestyle{plain}
+	
+	% space bevore chapter headline
+	\RedeclareSectionCommand[beforeskip=\chapterMargin]{chapter}
+
+	% Contents
+	\begin{spacing}{1.1}
+		\begingroup
+		
+		    % set subchapter depth
+			\setcounter{tocdepth}{2}
+			
+			\tableofcontents
+			\clearpage
+		\endgroup
+	\end{spacing}
+	\newpage
+
+	% Acronyms
+	\cleardoublepage
+    \input{template/content/acronyms}
+
+	% List of Figures
+	\cleardoublepage
+	\listoffigures
+
+	%List of Tables
+	\cleardoublepage
+	\listoftables
+
+	% List of Listings
+	\cleardoublepage
+	\lstlistoflistings
+	\cleardoublepage
+
+	\pagenumbering{arabic}
+	
+	\pagestyle{headings}
+
+	%Content
+	$body$
+
+	\clearpage
+
+	
+	% Glossar
+	%\cleardoublepage
+	%\printglossary[style=altlist,title=\glossaryPhrase]
+	%\input{template/content/glossary}
+	
+	% Appendix
+	\clearpage
+	\appendix
+	\input{template/content/appendix}
+	
+\end{document}
