@@ -32,30 +32,30 @@ $endif$
 	\begin{spacing}{1}
 		\input{template/ads/cover}
 	\end{spacing}
-	\newpage
+	\cleardoublepage
 
 	\pagenumbering{Roman}
 
 	% Restriction notices
 	\ifDocType{T2\_3100}{%
-		% no restricition notices for semester paper
+		% no restriction notices for semester paper
 	}{%
 		\input{template/ads/restrictionNotices}
-		\newpage
+		\cleardoublepage
 	}%
 
 	% Declaration
 	\input{template/ads/declaration}
-	\newpage
+	\cleardoublepage
 
 	% Abstract
 	\input{template/content/abstract}
-	\newpage
+	\cleardoublepage
 
         % only page number in footer
 	\pagestyle{plain}
 	
-	% space bevore chapter headline
+	% space before chapter headline
 	\RedeclareSectionCommand[beforeskip=\chapterMargin]{chapter}
 
 	% Contents
@@ -66,10 +66,10 @@ $endif$
 			\setcounter{tocdepth}{2}
 			
 			\tableofcontents
-			\clearpage
+			\cleardoublepage
 		\endgroup
 	\end{spacing}
-	\newpage
+
 
 	% Acronyms
 	\cleardoublepage
